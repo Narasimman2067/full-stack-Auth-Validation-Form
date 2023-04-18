@@ -1,0 +1,135 @@
+html{
+    scroll-behavior: smooth; 
+}
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+.avatar-main{
+    background:url("https://img.freepik.com/premium-photo/retro-synthwave-poster-with-city-landscape-super-car-sunset-generative-ai_808510-922.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 5000px rgba(0,0,0,0.1) ;
+    height: 100vh;
+}
+.container-div{
+    
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap:3rem;
+     height: 100vh;
+     width: 100vw;
+     padding-top: 5rem;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,-20) ;
+     overflow-x: hidden !important;
+}
+.container-div .loader{
+    max-inline-size: 100%;
+    /* transition-duration:20s;
+        transition-delay: 20s ease-in-out; */
+      
+    /* transition-timing-function:20s ease-in-out; */
+    align-items: center !important;
+    justify-content: center !important;
+    width:40rem;
+    height: 60rem !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border:5px solid hsl(56, 93%, 52%);
+}
+.title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title-container h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    background-color: hsl(256, 100%, 53%);
+    padding:0.5rem;
+    border-radius:5rem;
+    z-index: 1000;
+}
+.avatars{
+    display: flex;
+    gap:2rem;
+    object-fit:cover;
+    width:70rem !important;
+    align-items:center;
+    justify-content:center;
+}
+.avatar{
+    border: 0.4rem solid transparent;
+    padding: 0.6rem;
+    border-radius:5rem;
+    width: 5rem;
+    object-fit: fill;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+    margin-top: 2rem;
+}
+.avatar:hover{
+    background-color: #e7340c;
+    transform: scale(1.5rem) ease-in-out;
+
+}
+.selected{
+    border: 0.4rem solid #4e0eff;
+    background-color:orangered ;
+}
+.selected:hover{
+    width:5rem;
+    height: auto;
+    transform: all 1s ease-in-out;
+}
+img{
+    
+    height:auto;
+    object-fit: cover !important;
+    image-rendering: crisp-edges;
+    transition: 0.5s ease-in-out;
+    border:0.3rem solid rgb(207, 203, 203);
+    border-radius:50%;
+   
+    background-color: rgb(5, 2, 1);
+}
+.btn{
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top:20px !important;
+}
+.submit-btn {
+display: flex;
+
+align-items: center !important;
+justify-content: center !important;
+background-color: #4e0eff;
+color: white;
+padding: 1rem 2rem;
+border: none;
+border-radius: 5rem;
+font-weight: bold;
+cursor: pointer;
+
+font-size: 1rem;
+text-transform:capitalize;
+}
+.submit-btn:hover {
+    background-color:orangered;
+    transition: all 1s ease-in-out;
+    
+  }

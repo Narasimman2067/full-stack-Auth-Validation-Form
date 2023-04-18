@@ -1,0 +1,36 @@
+.logo-type{
+    border-radius: 5rem; 
+    width:14rem;
+    border-radius: 5rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+ 
+   
+}
+h1{
+ 
+    image-resolution:4000px;
+    align-Items:center;
+    font-Family: monospace;
+    font-Weight: 600;
+    font-Size:1.5rem;
+    color: inherit;
+    text-transform:uppercase;
+}
+
+
+
+
+.logo-header{
+    width:3rem;
+    font-size: small !important;
+    border-radius: 5rem;
+    height: 3rem;
+    padding-top:1rem;
+    background-color: aqua;
+    object-fit: cover;
+    
+    
+}
