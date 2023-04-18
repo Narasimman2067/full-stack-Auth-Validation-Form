@@ -1,0 +1,40 @@
+.logo-welcome{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    flex-direction:column;
+    
+   
+}
+
+.logo-robot{
+position:absolute;
+width: 10rem;
+background:none;
+border: none;
+display: flex;
+flex-direction: column !important;
+align-items: center !important;
+justify-content: center !important;
+top:10rem;
+}
+
+.h1-welcome{
+position: relative;
+top: 20rem;
+}
+.h1-welcome span{
+    /* color:rgb(55, 19, 237); */
+ color:#33ccff;
+ font-size: 3rem;
+ font-family: monospace;
+ font-weight:900;
+ text-decoration: dotted;
+ background-blend-mode: darken;
+}
+
+.h4-welcome{
+    position: relative;
+    top: 20rem;
+}

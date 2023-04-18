@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/apihelpers";
 // import { setAvatarRoute } from "../utils/APIRoutes";
+import Logout from './Logout';
 
 export default function SetAvatar() {
   const api = "https://api.dicebear.com/6.x/adventurer/svg?seed=Bailey"
@@ -16,6 +17,10 @@ export default function SetAvatar() {
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedAvatar, setSelectedAvatar] = useState(undefined);
+  const [currentUser, setCurrentUser] = useState(undefined);
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  
   const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,
@@ -23,12 +28,33 @@ export default function SetAvatar() {
     draggable: true,
     theme: "dark",
   };
- 
 
-  useEffect(() =>async() =>{
-    if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
-    navigate("/login");
-  }, []);
+  const LogoutData =async()=>{
+    if (!localStorage.getItem("chatapp-user")) {
+      navigate("/login");
+    } else {
+      setCurrentUser(
+        await JSON.parse(
+          localStorage.getItem("chatapp-user")
+        )
+      );
+      setIsLoaded(true)
+    }
+  }
+  useEffect(() => {
+    LogoutData()
+   }, []);
+  // useEffect(() =>async() =>{
+  //   localStorage.clear()
+  //   navigate("/login");
+  // }, []);
+
+
+
+  // useEffect(() =>async() =>{
+  //   if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
+  //   navigate("/login");
+  // }, []);
 
   const setProfilePicture = async () => {;
     if (selectedAvatar === undefined) {
@@ -107,20 +133,24 @@ console.log(data)
         <button onClick={setProfilePicture} className="submit-btn">
           Set as Profile Picture
         </button>
-
-        </div>
        
+        </div>
+      
         <ToastContainer />
+        <Logout/> 
       </Container>
-   
 
+   
+ 
 
   )
   
    }
       
    
-      </div> 
+   
+      </div>
+     
     </div>
   );
         }

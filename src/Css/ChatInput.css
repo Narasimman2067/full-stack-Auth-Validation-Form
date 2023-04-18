@@ -1,0 +1,78 @@
+.button-container{
+    display: flex;
+    align-items: center;
+    color: #000050;
+    gap: 2rem ;
+}
+.emoji{
+position:relative;
+
+}
+svg{
+    font-size:2rem;
+    
+    color:#e2fa06f0;cursor:pointer;
+}
+/* .emoji-picker-react{
+   
+} */
+.EmojiPickerReact{
+    position:absolute;
+    top:-420px !important;
+    width: 30vw !important;
+    height:60vh !important ;
+}
+.bs-emoji{
+
+   height: 5rem;
+   width: 2rem;
+  left:20px;
+  align-items: center;
+  display: flex;
+  margin:2px 0px 0px 2px;
+}
+
+.input-container{
+    position:relative !important;
+    width: 100%;
+    border-radius: 2rem;
+    display: flex;
+    height: 4rem;
+    margin:0.3rem 0rem;
+    padding: 0.2rem;
+    align-items: center;
+    gap: 2rem;
+    background-color:#e312d562;
+}
+.input{
+    position: fixed !important;
+    width:100%;
+    height:60% !important;
+    padding: 0rem 0rem 0rem 2.5rem;
+    background-color: transparent;
+    color: rgba(252, 248, 248, 0.945);
+    /* padding-left: 1rem; */
+    border:none;
+    outline: 0;
+
+}
+
+::selection{
+ background-color: #da0f2035;
+}
+:focus{
+    outline: none;
+}
+
+.btn-chatinput{
+    padding: 1.2rem 1rem 1.2rem 1rem;
+    margin: 0rem 0rem 0rem 0rem;
+    border-radius: 3rem;
+ 
+    display: flex;
+    align-items: center !important;
+    justify-content:center !important;
+    background-color: #eb2e219c;
+}
+
+

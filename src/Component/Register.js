@@ -13,7 +13,7 @@ function Register() {
   useEffect(()=>{
     if(localStorage.getItem("chatapp-user")){
     
-    navigate("/chat")
+    navigate("/register")
     
     }
     },[])
