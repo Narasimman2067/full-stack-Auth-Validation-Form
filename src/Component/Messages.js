@@ -12,7 +12,7 @@ function Messages() {
 
 
 const Container =styled.div`
-width:80%;
+height:85%;
 color:white !important;
 
 `;
