@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import styled from "styled-components";
 import "../Css/Register.css";
 import axios from "axios";
 import { loginRoute, registerRoute } from "../utils/apihelpers";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Login() {
   const navigate = useNavigate();
-// use effect used to run the code operatin when first time is loaded
-//   useEffect(()=>{
-// if(localStorage.getItem("chatapp-user")){
 
-// navigate("/chat")
-
-// }
-// },[])
 
   const [values, setValues] = useState({
     username: "",
@@ -41,10 +36,11 @@ function Login() {
     if (username==="" || username.length<3) {
       toast.error("Incorrect username", toastOptions);
       return false;
-    } else if (password==="") {
+    } else if (password===""  ) {
       toast.error("Incorrect username or password", toastOptions);
       return false;
     }
+   
 
     return true;
   };
@@ -62,11 +58,11 @@ function Login() {
       }
       if (data.status === true) {
         localStorage.setItem(
-          process.env.REACT_APP_LOCALHOST_KEY,
+          "chatapp-user",
           JSON.stringify(data.user,toastOptions)
         );
 
-        navigate("/chat");
+        navigate("/welcome");
       }
     }
   
@@ -114,7 +110,9 @@ function Login() {
               </button>
             </span>
           </div>
+         
         </form>
+       
       </FormContainer>
       <ToastContainer />
     </div>

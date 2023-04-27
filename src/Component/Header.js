@@ -8,14 +8,13 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+
 import Tooltip from "@mui/material/Tooltip";
 
 import "../Css/Header.css";
-import { Menu, MenuItem } from "@mui/material";
+import { Menu } from "@mui/material";
+import Logout from "./Logout";
 
-// const pages = ['Home', 'Login', 'LogOut'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout',];
 
 function ResponsiveAppBar({ currentUser, contacts }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,16 +25,14 @@ function ResponsiveAppBar({ currentUser, contacts }) {
   );
   const [currentUserSelected, setcurrentUserSelected] = React.useState(null);
   React.useEffect(() => {
-    // const data = await JSON.parse(
-    //   localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
-    // );
+   
     console.log(currentUser);
     console.log(contacts);
     if (currentUser) {
       setcurrentUserName(currentUserName);
       setcurrentUserAvatarImage(currentUserAvatarImage);
     }
-    // setCurrentSelected(contacts.length>0)
+    
   }, [currentUser]);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -73,12 +70,12 @@ function ResponsiveAppBar({ currentUser, contacts }) {
             />
             <h1>Chat Friend</h1>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, alignItems: "center",justifyContent:"left",margin:"0rem 4rem" ,display: { xs: "none", md: "flex" } }}>
             <Typography
               variant="h6"
               sx={{
                 mr: 2,
-                mt: 1,
+                mt: 0,
                 backgroundColor: "none !important",
                 alignItems: "center",
                 fontFamily: "monospace",
@@ -95,7 +92,7 @@ function ResponsiveAppBar({ currentUser, contacts }) {
               variant="h6"
               sx={{
                 mr: 2,
-                mt: 1,
+                mt: 0,
                 backgroundColor: "none !important",
                 alignItems: "center",
                 fontFamily: "monospace",
@@ -106,24 +103,38 @@ function ResponsiveAppBar({ currentUser, contacts }) {
                 textDecoration: "none",
               }}
             >
-              <a href="/">Login</a>
+              <a href="/login">Login</a>
             </Typography>
             <Typography
               variant="h6"
               sx={{
                 mr: 2,
-                mt: 1,
+                mt: 0,
+                display:"flex",
                 backgroundColor: "none !important",
                 alignItems: "center",
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".1rem",
-                fontSize: "1.5rem",
+                fontSize: "1rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
-              <a href="/">Logout</a>
+              <a href="/login" style={{
+                mr: 2,
+                mt: 0,
+                padding:"5px",
+                display:"flex",
+                backgroundColor: "none !important",
+                alignItems: "center",
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                fontSize: "1rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}>Logout </a><span><Logout/></span>
             </Typography>
           </Box>
 
@@ -161,45 +172,11 @@ function ResponsiveAppBar({ currentUser, contacts }) {
               />
             </Typography>
 
-            {/* <Typography
-          variant="h6"
-          sx={{
-            mr:2,
-            mt:2,
-            alignItems:"center",
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            letterSpacing: '.1rem',
-            fontSize:"1.5rem",
-            color: 'inherit',
-            textDecoration: 'none',
-            cursor:"pointer",
-          }}
-          >
-            
-              Login
-           
-          </Typography>
-          <Typography
-          variant="h6"
-          sx={{
-            mr:2,
-            mt:1,
-            alignItems:"center",
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            letterSpacing: '.1rem',
-            fontSize:"1.5rem",
-            color: 'inherit',
-            textDecoration: 'none',
-          }}
-          >
-            
-              Logout
-           
-          </Typography> */}
+      
             <Menu
+           
               id="menu-appbar"
+             
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -213,91 +190,46 @@ function ResponsiveAppBar({ currentUser, contacts }) {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
+                mt: 0.5,padding:"3rem",
+                
                 display: { xs: "block", md: "none" },
               }}
             >
               <Typography
                 variant="h6"
                 sx={{
-                  mr: 2,
+                  mt: 2,padding:"2rem 3rem",
                 }}
               >
-                <a href="/">Home</a>
+                <a href="/" style={{padding:"1rem 3rem"}}>Home</a>
               </Typography>
               <Typography
                 variant="h6"
                 sx={{
-                  mr: 2,
+                  mt: 2,padding:"2rem 3rem"
                 }}
               >
-                <a href="/login">Login</a>
+                <a href="/login" style={{padding:"1rem 3rem"}}>Login</a>
               </Typography>
               <Typography
                 variant="h6"
                 sx={{
-                  mr: 2,
+                  mt: 2,padding:"2rem 3rem"
                 }}
               >
-                <a href="/login">Logout</a>
+                <a href="/login" style={{padding:"1rem 3rem"}}>Logout</a>
               </Typography>
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
+         
             </Menu>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* {contacts &&
-                  contacts.map((contact, products) => {
-                    return (
-                      <Typography
-                        className={`contact ${
-                          products === currentUserSelected ? "selected " : ""
-                        }`}
-                        key={products.id}
-                      >
-                        <Typography className="avatar1">
-                          <img
-                            className={`avatar1-img${
-                              products === currentUserSelected
-                                ? "selected "
-                                : ""
-                            }`}
-                            key={products.id}
-                            src={`data:image/svg+xml;base64,${contact.avatarImage}`}
-                            alt="avatar"
-                          />
-                        </Typography>
-                        <Typography className="username1">
-                          <h1>{currentUserName.userName}</h1>
-                        </Typography>
-                      </Typography>
-                    );
-                  })} */}
-{/* 
-                <Typography className="avatar2" sx={{
-                height:'5rem',
-              }}>
-                  <img
-                    className="img"
-                    src={`data:image/svg+xml;base64,${currentUserAvatarImage}`}
-                    alt="avatar"
-                  />
-                </Typography>
-                <Typography className="username2">
-                  {currentUserName}
-                </Typography>
-                <Typography className="avatar2">
-                  <img
-                    className="img"
-                    src={`data:image/svg+xml;base64,${currentUserAvatarImage}`}
-                    alt="avatar"
-                  />
-                </Typography> */}
+               
+              
+               
+               
 
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
@@ -318,12 +250,7 @@ function ResponsiveAppBar({ currentUser, contacts }) {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                  
-                </MenuItem>
-              ))} */}
+           
             </Menu>
           </Box>
         </Toolbar>

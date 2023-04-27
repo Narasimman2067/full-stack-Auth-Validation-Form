@@ -46,3 +46,12 @@
     transform: rotate(360deg);
   }
 } */
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  
+  background-image: linear-gradient(100deg, #2611ac 0%, #ef4f23 100%) !important;
+}

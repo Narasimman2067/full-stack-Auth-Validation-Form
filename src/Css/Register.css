@@ -1,5 +1,6 @@
 body{
-    background: rgb(242, 242, 248);
+   scroll-behavior: smooth !important;
+    
 }
 .controll-div{
     width:30vw !important;

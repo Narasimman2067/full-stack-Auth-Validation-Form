@@ -3,10 +3,11 @@ import "./App.css";
 import * as React from "react"
 import Register from "./Component/Register";
 import Login from "./Component/Login";
-import Chat from "./Component/Chat";
-import  SetAvatar  from "./Component/Avatar";
-import Header from "./Component/Header";
+
+
 import ResponsiveAppBar from "./Component/Header";
+import Welcome from "./Component/Welcome";
+import Home from "./Component/Home";
 
 
 function App() {
@@ -19,14 +20,16 @@ function App() {
     <BrowserRouter>
       <Routes>
      
-      
-      <React.Fragment>
+      <Route path="/" element={<Home />} />
+       
+      <Route path="/welcome" element={<Welcome />} />
       <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/setavatar" element={<SetAvatar/>} />
-        <Route path="/chat" element={<Chat />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Home />} />
+       
 
-      </React.Fragment>
+
+    
     
         
       </Routes>

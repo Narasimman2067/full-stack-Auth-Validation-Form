@@ -84,7 +84,7 @@ function Register() {
       if(data.status === true){
         localStorage.setItem(process.env.REACT_APP_LOCALHOST_KEY,JSON.stringify(data.user))
       }
-      navigate("/setAvatar")
+      navigate("/welcome")
       
      
     }
@@ -93,7 +93,7 @@ function Register() {
   return (
     <div>
       <FormContainer className="auth-box">
-        <form
+        <form 
           className="controll-div"
           onSubmit={(event) => handleSubmit(event)}
         >
@@ -158,6 +158,6 @@ const FormContainer = styled.div`
   padding: 30px;
   width: 100vw;
   height: 60vh;
-  top: 100px !important;
+  top: 10rem !important;
 `;
 export default Register;
