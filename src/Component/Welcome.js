@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Logout from "./Logout";
 
 export default function Welcome() {
   const [userName, setUserName] = useState("");
@@ -20,6 +21,7 @@ const fetchName = async () => {
   }, []);
   return (
     <Container>
+      <Logout/>Logout
       <img src="https://i.pinimg.com/originals/84/8c/34/848c342a56e7854dec45b9349c21dfe5.gif" alt="robot" />
       <h1>
         Welcome, <span>{userName}!</span>
