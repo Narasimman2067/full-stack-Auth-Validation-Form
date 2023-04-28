@@ -47,11 +47,46 @@
   }
 } */
 
-html{
-  scroll-behavior: smooth;
-}
+
 
 body{
   
   background-image: linear-gradient(100deg, #2611ac 0%, #ef4f23 100%) !important;
+}
+html{
+  scroll-behavior: smooth !important;
+}
+*{
+  scroll-behavior: smooth !important;
+}
+::-webkit-scrollbar {
+  background-image: url("https://i.pinimg.com/236x/fe/3f/6c/fe3f6c06968f5193172e6bbfe814ad38.jpg");
+ 
+  width: 1.5rem;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar-thumb {
+  background: url("https://i.pinimg.com/236x/bc/c1/f1/bcc1f177476ababd1f60806c2120ad28.jpg");
+  height: fit-content;
+  border-radius: 5rem;
+  width: 0.5rem !important;
+  scroll-behavior: smooth;
+ scale: rotate(145deg);
+  background-position:center;
+  background-blend-mode: darken;
+  object-fit: cover;
+  background-repeat: repeat;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: url("https://i.pinimg.com/236x/5c/45/09/5c4509d6981c4c89704edbdf929886d1.jpg");
+  height: fit-content;
+  border-radius: 5rem;
+  width: 0.5rem !important;
+  scroll-behavior: smooth;
+  background-position:center;
+  background-blend-mode:overlay !important;
+  object-fit: cover;
+  background-repeat: repeat;
+  background-clip: content-box;
 }
